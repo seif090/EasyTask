@@ -71,4 +71,8 @@ onNewTask() {
 
 }
 
+onCancelAddTask() {
+  this.isAddingTask = false;
+}
+
 }
