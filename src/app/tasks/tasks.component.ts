@@ -9,6 +9,55 @@ import { TaskComponent } from "./task/task.component";
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  @Input() id! : string;
-  @Input() name!: string;
+  @Input({required: true}) userId! : string;
+  @Input({required: true}) name!: string;
+  tasks = [
+    {
+      id: 't1',
+      userId: 'u1',
+      title: 'Master Angular',
+      summary: 'Learn the fundamentals of Angular',
+      dueDate: '2023-08-01'
+  },
+  {
+    id: 't2',
+    userId: 'u2',
+    title: 'Master React',
+    summary: 'Learn the fundamentals of React',
+    dueDate: '2023-08-01',
+  },
+  {
+    id: 't3',
+    userId: 'u3',
+    title: 'Master Vue',
+    summary: 'Learn the fundamentals of Vue',
+    dueDate: '2023-08-01',
+  },
+  {
+    id: 't4',
+    userId: 'u4',
+    title: 'Master Svelte',
+    summary: 'Learn the fundamentals of Svelte',
+    dueDate: '2023-08-01',
+  },
+  {
+    id: 't5',
+    userId: 'u5',
+    title: 'Master Node.js',
+    summary: 'Learn the fundamentals of Node.js',
+    dueDate: '2023-08-01',
+  },
+  {
+    id: 't6',
+    userId: 'u6',
+    title: 'Master Express.js',
+    summary: 'Learn the fundamentals of Express.js',
+    dueDate: '2023-08-01',
+  },
+
+];
+get selectedUserTasks(){
+  return this.tasks.filter(task => task.userId === this.userId);
+}
+
 }
